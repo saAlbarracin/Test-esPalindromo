@@ -7,6 +7,38 @@
     <title>Ejercicio Es Palindromo</title>
 </head>
 <body>
+    <h1>Evaluando Palindromo</h1>
+    <input type="text" id="input-texto" />
+    <button onclick="evaluar()">Probar</button>
+    <p id="resultado">Esperando evaluación...</p>
+
+    <script>
+      function evaluar() {
+        const inputTexto = document.getElementById("input-texto").value;
+        const pResultado = document.getElementById("resultado");
+      
+
+      if (esPalindromo(inputTexto) === true) {
+        pResultado.textContent = "La palabra ingresada es un palíndromo";
+        pResultado.style.color = "green";
+      } else {
+        pResultado.textContent = "La palabra ingresada no es un palindromo";
+        pResultado.style.color = "red";
+      }
+    }
+      
+    
+    function esPalindromo(inputTexto) {
+        let array = inputTexto.split("");
+        let invertirPalabra = array.reverse().join("");
+
+        if (inputTexto === invertirPalabra) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
     
 </body>
 </html>
